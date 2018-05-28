@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ClockViewController.swift
 //  CoreAnimationExercise
 //
 //  Created by Jinya Tu on 2018/5/27.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ClockViewController: UIViewController {
 
     @IBOutlet weak var clockView: UIView!
     var secondHand: UIView!
@@ -23,9 +23,9 @@ class ViewController: UIViewController {
         let diameter = clockView.frame.width
         let radius = diameter / 2
         
-        self.clockView.layer.cornerRadius = radius
-        self.clockView.layer.borderWidth = 1.0
-        self.clockView.layer.borderColor = UIColor.gray.cgColor
+        clockView.layer.cornerRadius = radius
+        clockView.layer.borderWidth = 1.0
+        clockView.layer.borderColor = UIColor.gray.cgColor
         
         let sH = radius + 10 - 30 - 15
         let mH = sH - 15
@@ -55,18 +55,24 @@ class ViewController: UIViewController {
         hourHand.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 43/255.0, alpha: 1.0)
         minuteHand.backgroundColor = UIColor(red: 74/255.0, green: 74/255.0, blue: 74/255.0, alpha: 1.0)
         secondHand.backgroundColor = UIColor(red: 252/255.0, green: 61/255.0, blue: 57/255.0, alpha: 1.0)
-        self.clockView.addSubview(hourHand)
-        self.clockView.addSubview(minuteHand)
-        self.clockView.addSubview(secondHand)
+        clockView.addSubview(hourHand)
+        clockView.addSubview(minuteHand)
+        clockView.addSubview(secondHand)
         
-        self.hourHand.layer.anchorPoint = CGPoint(x: 0.5, y: 1.0-hRatio)
-        self.minuteHand.layer.anchorPoint = CGPoint(x: 0.5, y: 1.0-mRatio)
-        self.secondHand.layer.anchorPoint = CGPoint(x: 0.5, y: 1.0-sRatio)
+        hourHand.layer.anchorPoint = CGPoint(x: 0.5, y: 1.0-hRatio)
+        minuteHand.layer.anchorPoint = CGPoint(x: 0.5, y: 1.0-mRatio)
+        secondHand.layer.anchorPoint = CGPoint(x: 0.5, y: 1.0-sRatio)
         
-        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.tick), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ClockViewController.tick), userInfo: nil, repeats: true)
         
         self.tick()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer?.invalidate()
     }
     
     @objc func tick() {
@@ -80,11 +86,11 @@ class ViewController: UIViewController {
         let hoursAngle = Double(dateComponents.hour!)/12.0 * Double.pi * 2.0
         let minsAngle = Double(dateComponents.minute!)/60.0 * Double.pi * 2.0
         let secsAngle = Double(dateComponents.second!)/60.0 * Double.pi * 2.0
-//        print("时间\(hoursAngle)h\(minsAngle)m\(secsAngle)h")
+//        print("Time is \(hoursAngle)h\(minsAngle)m\(secsAngle)s")
         
-        self.hourHand.transform = CGAffineTransform(rotationAngle: CGFloat(hoursAngle))
-        self.minuteHand.transform = CGAffineTransform(rotationAngle: CGFloat(minsAngle))
-        self.secondHand.transform = CGAffineTransform(rotationAngle: CGFloat(secsAngle))
+        hourHand.transform = CGAffineTransform(rotationAngle: CGFloat(hoursAngle))
+        minuteHand.transform = CGAffineTransform(rotationAngle: CGFloat(minsAngle))
+        secondHand.transform = CGAffineTransform(rotationAngle: CGFloat(secsAngle))
     }
 
     override func didReceiveMemoryWarning() {

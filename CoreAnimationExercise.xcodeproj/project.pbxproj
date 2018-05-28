@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2362E27220BBDF0400466A07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362E27120BBDF0400466A07 /* MainViewController.swift */; };
 		814BC69E20BA7FAC00CDE275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BC69D20BA7FAC00CDE275 /* AppDelegate.swift */; };
-		814BC6A020BA7FAC00CDE275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BC69F20BA7FAC00CDE275 /* ViewController.swift */; };
+		814BC6A020BA7FAC00CDE275 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814BC69F20BA7FAC00CDE275 /* ClockViewController.swift */; };
 		814BC6A320BA7FAC00CDE275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814BC6A120BA7FAC00CDE275 /* Main.storyboard */; };
 		814BC6A520BA7FB000CDE275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814BC6A420BA7FB000CDE275 /* Assets.xcassets */; };
 		814BC6A820BA7FB000CDE275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814BC6A620BA7FB000CDE275 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2362E27120BBDF0400466A07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		814BC69A20BA7FAC00CDE275 /* CoreAnimationExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814BC69D20BA7FAC00CDE275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		814BC69F20BA7FAC00CDE275 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		814BC69F20BA7FAC00CDE275 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		814BC6A220BA7FAC00CDE275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814BC6A420BA7FB000CDE275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		814BC6A720BA7FB000CDE275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +37,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2362E27320BBE7CC00466A07 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				814BC69F20BA7FAC00CDE275 /* ClockViewController.swift */,
+			);
+			path = Clock;
+			sourceTree = "<group>";
+		};
+		2362E27420BBE7DC00466A07 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				814BC6A620BA7FB000CDE275 /* LaunchScreen.storyboard */,
+				814BC6A120BA7FAC00CDE275 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		814BC69120BA7FAC00CDE275 = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +73,11 @@
 		814BC69C20BA7FAC00CDE275 /* CoreAnimationExercise */ = {
 			isa = PBXGroup;
 			children = (
+				2362E27420BBE7DC00466A07 /* Storyboards */,
+				2362E27320BBE7CC00466A07 /* Clock */,
+				2362E27120BBDF0400466A07 /* MainViewController.swift */,
 				814BC69D20BA7FAC00CDE275 /* AppDelegate.swift */,
-				814BC69F20BA7FAC00CDE275 /* ViewController.swift */,
-				814BC6A120BA7FAC00CDE275 /* Main.storyboard */,
 				814BC6A420BA7FB000CDE275 /* Assets.xcassets */,
-				814BC6A620BA7FB000CDE275 /* LaunchScreen.storyboard */,
 				814BC6A920BA7FB000CDE275 /* Info.plist */,
 			);
 			path = CoreAnimationExercise;
@@ -135,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814BC6A020BA7FAC00CDE275 /* ViewController.swift in Sources */,
+				2362E27220BBDF0400466A07 /* MainViewController.swift in Sources */,
+				814BC6A020BA7FAC00CDE275 /* ClockViewController.swift in Sources */,
 				814BC69E20BA7FAC00CDE275 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
